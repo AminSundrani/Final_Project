@@ -25,8 +25,10 @@ def predict():
     
         #predict
        prediction = trained_model.predict(data)
+
+       output = round(prediction[0][0], 2)
     
-       return render_template('index.html', prediction = prediction[0][0])
+       return render_template('index.html', prediction = 'Based on our prediction model, Revenue will be ${}'.format(output))
 
 if __name__ == "__main__":
     app.run(debug=True)
