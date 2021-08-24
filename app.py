@@ -3,6 +3,7 @@ import numpy as np
 from flask import Flask, request, jsonify, render_template
 import joblib
 
+
 app = Flask(__name__)
 # model = pickle.load(open('movies_model_overall.pkl', 'rb'))
 
