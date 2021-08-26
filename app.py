@@ -3,17 +3,14 @@ import numpy as np
 from flask import Flask, request, jsonify, render_template
 import joblib
 
-
-app = Flask(__name__)
 # model = pickle.load(open('movies_model_overall.pkl', 'rb'))
+app = Flask(__name__)
 
 @app.route('/')
 def home():
     return render_template('index.html')
-
 @app.route('/prediction',methods=['GET','POST'])
 def predict():
-
    if request.method == "POST" : 
        data = request.form.get('input1')
        data = np.array(data)
